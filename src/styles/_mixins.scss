@@ -1,5 +1,27 @@
+@import './_variables.scss';
+
 @mixin test {
     background-color: palevioletred;
     width: 20mm;
     height: 20mm;
+}
+
+@mixin font-thesis-title {
+    font-weight: 500;
+    font-size: 54pt;
+}
+
+@mixin font-thesis-author {
+    font-weight: 300;
+    font-size: 36pt;
+}
+
+@mixin font-copy {
+    font-weight: 300;
+    font-size: 28pt;
+}
+
+@mixin font-copy-bold {
+    font-weight: 500;
+    font-size: 28pt;
 }
