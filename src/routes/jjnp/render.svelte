@@ -1,13 +1,15 @@
 <script lang="ts">
 import RenderMeTest from "../../components/RenderMeTest.svelte";
-import { r } from "../../util/svelte-render";
-
+import { doFullCompile, r } from "../../util/svelte-render";
 
     // const comp = RenderMeTest
-    const rendered = r("<h2>kek</h2>").js.code
+    // const rendered = r(`<RenderMeTest/>`).js.code
     // const rendered = RenderMeTest.render({})
 
+    // const kek = doFullCompile(`<RenderMeTest></RenderMeTest>`)
+
+    const kek = doFullCompile(`<h3>asdfasdf</h3>`)
 </script>
 
 <h1>Output:</h1>
-<p>{rendered}</p>
+<p>{'hello'}</p>

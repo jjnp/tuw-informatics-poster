@@ -14,7 +14,11 @@ const config = {
 
 	kit: {
 		adapter: adapter()
-	}
+	},
+
+	compilerOptions: {
+		css: true,
+	},
 };
 
 export default config;

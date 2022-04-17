@@ -1,0 +1,14 @@
+@import './variables';
+@import './mixins';
+@import './fonts';
+
+:global(html, body) {
+    margin: 0;
+    padding: 0;
+}
+
+:global(*) {
+    font-family: 'Roboto';
+    font-weight: 400;
+}
+
