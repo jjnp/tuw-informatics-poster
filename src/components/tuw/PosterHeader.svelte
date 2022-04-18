@@ -1,7 +1,7 @@
 <script lang="ts">
 import ResearchGroupLogo from "./ResearchGroupLogo.svelte";
 
-
+export let yourEmail: string | undefined = '[Fill in your email address, optional]'
 
 </script>
 
@@ -26,10 +26,11 @@ import ResearchGroupLogo from "./ResearchGroupLogo.svelte";
             <p class="info__line">[Fill in official name of institute]</p>
             <p class="info__line">[Fill in official name of research unit]</p>
             <p class="info__line">Supervisor: [Fill in name, degrees and titles]</p>
-            <p class="info__line">Contact: [Fill in your email address, optional]</p>
+            {#if yourEmail}
+            <p class="info__line">Contact: {yourEmail}</p>
+            {/if}
         </div>
     </div>
-<!-- <div class="test">hello</div> -->
 </div>
 
 <style lang="scss">

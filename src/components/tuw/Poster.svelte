@@ -4,6 +4,7 @@ import PosterHeader from "./PosterHeader.svelte";
 
 </script>
 
+
 <div class="a0">
     <PosterHeader></PosterHeader>
     <div class="content">
@@ -12,6 +13,7 @@ import PosterHeader from "./PosterHeader.svelte";
 </div>
 
 <style lang="scss">
+    @import '../../styles/global.scss';
     .a0 {
         width: 841mm;
         height: 1189mm;

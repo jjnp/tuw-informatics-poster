@@ -1,8 +1,8 @@
 <script lang="ts">
-import RenderMeTest from "../../components/RenderMeTest.svelte";
+import Poster from "$components/tuw/Poster.svelte";
 
 
 
 </script>
 
-<RenderMeTest name="jacob"></RenderMeTest>
+<Poster></Poster>

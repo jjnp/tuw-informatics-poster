@@ -1,4 +1,6 @@
 <script lang="ts">
+import Poster from "$components/tuw/Poster.svelte";
+
 import type { SvelteComponent } from "svelte";
     export let html: string
     export let css: string
@@ -8,3 +10,5 @@ import type { SvelteComponent } from "svelte";
 
 <h1>CSS:</h1>
 <p>{css}</p>
+
+<!-- <Poster></Poster> -->

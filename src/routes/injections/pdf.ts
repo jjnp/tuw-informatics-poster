@@ -1,5 +1,6 @@
 import { renderOther, renderToPdf } from "../../util/render-pdf"
 import RenderMeTestSvelte from "../../components/RenderMeTest.svelte"
+import Poster from '$components/tuw/Poster.svelte'
 import type { RequestHandler } from "@sveltejs/kit"
 import fs from 'fs'
 
@@ -16,9 +17,10 @@ const makeHtmlDoc = (html: string, css: string): string => `
 
 export const get: RequestHandler = async () => {
 
-    const { html, css } = RenderMeTestSvelte.render({name: 'Jacob'})
-    const pdfBuffer = await renderToPdf(html, css.code)
-    // const pdfBuffer = await renderOther(html, css.code)
+    // const { html, css } = RenderMeTestSvelte.render({name: 'Jacob'})
+    const { html, css } = Poster.render({yourEmail: 'jacob.palecek@outlook.com'})
+    // const pdfBuffer = await renderToPdf(html, css.code)
+    const pdfBuffer = await renderOther(html, css.code)
 
     // return {
     //     body: {
