@@ -19,8 +19,8 @@ export const get: RequestHandler = async () => {
 
     // const { html, css } = RenderMeTestSvelte.render({name: 'Jacob'})
     const { html, css } = Poster.render({yourEmail: 'jacob.palecek@outlook.com'})
-    const pdfBuffer = await renderToPdf(html, css.code)
-    // const pdfBuffer = await renderOther(html, css.code)
+    // const pdfBuffer = await renderToPdf(html, css.code)
+    const pdfBuffer = await renderOther(html, css.code)
 
     // return {
     //     body: {

@@ -15,8 +15,8 @@ import PosterHeader from "./PosterHeader.svelte";
 <style lang="scss">
     @import '../../styles/global.scss';
     .a0 {
-        width: 841mm;
-        height: 1189mm;
+        width: dpiAdjust(841mm);
+        height: dpiAdjust(1189mm);
         position: absolute;
         overflow: hidden;
     }
@@ -24,6 +24,6 @@ import PosterHeader from "./PosterHeader.svelte";
     .content {
         height: 100%;
         width: 100%;
-        padding: 12.7mm;
+        padding: dpiAdjust(12.7mm);
     }
 </style>

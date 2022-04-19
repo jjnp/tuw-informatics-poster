@@ -33,7 +33,7 @@ export const renderToPdf = (html: string, css: string): Promise<Buffer> => {
 }
 
 export const renderOther = async (html: string, css: string): Promise<Buffer> => {
-    const options = { format: 'A0', printBackground: true };
+    const options = { format: 'A0', printBackground: true, scale: 1 / (300/96)};
     const pageSource = makeHtmlDoc(html, css)
     console.log(pageSource)
     return await other.generatePdf({ content: pageSource }, options)

@@ -8,20 +8,24 @@
 
 @mixin font-thesis-title {
     font-weight: 500;
-    font-size: 54pt;
+    font-size: dpiAdjust(54pt);
 }
 
 @mixin font-thesis-author {
     font-weight: 300;
-    font-size: 36pt;
+    font-size: dpiAdjust(36pt);
 }
 
 @mixin font-copy {
     font-weight: 300;
-    font-size: 28pt;
+    font-size: dpiAdjust(28pt);
 }
 
 @mixin font-copy-bold {
     font-weight: 500;
-    font-size: 28pt;
+    font-size: dpiAdjust(28pt);
+}
+
+@function dpiAdjust($x) {
+    @return calc(300 / 96 * $x);
 }
