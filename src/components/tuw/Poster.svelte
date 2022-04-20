@@ -22,6 +22,7 @@ import PosterHeader from "./PosterHeader.svelte";
     }
 
     .content {
+        box-sizing: border-box;
         height: 100%;
         width: 100%;
         padding: dpiAdjust(12.7mm);

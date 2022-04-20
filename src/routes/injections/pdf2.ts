@@ -1,6 +1,6 @@
 import { renderOther, renderToPdf } from "../../util/render-pdf"
 import RenderMeTestSvelte from "../../components/RenderMeTest.svelte"
-import Poster from '$components/tuw/Poster.svelte'
+import Poster from './mine.svelte'
 import type { RequestHandler } from "@sveltejs/kit"
 import fs from 'fs'
 

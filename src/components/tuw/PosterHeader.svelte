@@ -1,8 +1,22 @@
 <script lang="ts">
 import ResearchGroupLogo from "./ResearchGroupLogo.svelte";
 
-export let yourEmail: string | undefined = '[Fill in your email address, optional]'
-
+// export let thesisTitle: string | undefined = 'Your Thesis Title Comes Here And It May Be Double-Spaced If Necessary'
+// export let author: string | undefined = '[Fill in your full name]'
+// export let programTitle: string | undefined = '[Fill in official name of Masters program]'
+// export let institute: string | undefined = '[Fill in official  name of institute]'
+// export let researchUnit: string |  undefined = '[Fill in official name of research unit]'
+// export let supervisor: string |  undefined = '[Fill in name, degrees and titles]'
+// export let coSupervisors: string[] = []
+// export let yourEmail: string | undefined = '[Fill in your email address, optional]'
+export let thesisTitle: string | undefined = 'Improving Serverless Edge Computing for Network Bound Workloads'
+export let author: string | undefined = 'Jacob Palecek'
+export let programTitle: string | undefined = 'Software Engineering & Internet Computing'
+export let institute: string | undefined = 'Institute of Information Systems Engineering'
+export let researchUnit: string |  undefined = 'Distributed Systems Group'
+export let supervisor: string |  undefined = 'Univ.Prof.Dr. Schahram Dustdar'
+export let coSupervisors: string[] = ['Dr. Thomas Rausch', 'Dipl.Ing. Philipp Raith']
+export let yourEmail: string | undefined = 'jacob.palecek@outlook.com'
 </script>
 
 <div class="container">
@@ -17,17 +31,19 @@ export let yourEmail: string | undefined = '[Fill in your email address, optiona
     <div class="details">
         <div class="details__thesis">
             <h1 class="thesis-title">
-                Your Thesis Title Comes Here And It May Be 
-                Double-Spaced If Necessary
+                {thesisTitle}
             </h1>
-            <h2 class="author">[Fill in your full name]</h2>
-            <h2 class="program-title">[Fill in official name of Master's program]</h2>
+            <h2 class="author">{author}</h2>
+            <h2 class="program-title">{programTitle}</h2>
         </div>
         <div class="details__university">
             <p class="info__title">TU Wien Informatics</p>
-            <p class="info__line">[Fill in official name of institute]</p>
-            <p class="info__line">[Fill in official name of research unit]</p>
-            <p class="info__line">Supervisor: [Fill in name, degrees and titles]</p>
+            <p class="info__line">{institute}</p>
+            <p class="info__line">{researchUnit}</p>
+            <p class="info__line">Supervisor: {supervisor}</p>
+            {#each coSupervisors as coSupervisor, index}
+            <p class="info__line">{index === 0 ? 'Assistance: ' : ''}{coSupervisor}</p>
+            {/each}
             {#if yourEmail}
             <p class="info__line">Contact: {yourEmail}</p>
             {/if}
@@ -60,17 +76,18 @@ export let yourEmail: string | undefined = '[Fill in your email address, optiona
         &__research-group {
             height: dpiAdjust(60mm);
             width: dpiAdjust(200mm);
-            display: flex;
-            flex-direction: row;
-            justify-content: end;
-            align-content: flex-start;
+            // display: flex;
+            // flex-direction: row;
+            // justify-content: end;
+            // align-content: flex-start;
         }
     }
 
     .info {
         &__title {
             @include font-copy-bold;
-            margin-bottom: adpiAdjust(2mm);
+            margin: 0;
+            margin-bottom: dpiAdjust(2mm);
         }
         
         &__line {
