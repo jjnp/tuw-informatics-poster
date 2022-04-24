@@ -19,12 +19,15 @@ import PosterHeader from "./PosterHeader.svelte";
         height: dpiAdjust(1189mm);
         position: absolute;
         overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
     }
 
     .content {
         box-sizing: border-box;
-        height: 100%;
-        width: 100%;
-        padding: dpiAdjust(12.7mm);
+        flex-grow: 1;
+        margin: dpiAdjust(12.7mm);
+        overflow: hidden;
     }
 </style>

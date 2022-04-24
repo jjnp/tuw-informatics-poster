@@ -1,5 +1,9 @@
 <script lang="ts">
 import Poster from "$components/tuw/Poster.svelte";
+import Result from "$components/jjnp/Result.svelte";
+import IntroImage from '$components/jjnp/IntroImage.svelte'
+import LBImage from '$components/jjnp/LBImage.svelte'
+import OsmoticImage from '$components/jjnp/OsmoticImage.svelte'
 
 
 </script>
@@ -15,8 +19,8 @@ import Poster from "$components/tuw/Poster.svelte";
                     <li>Despite research efforts, network bound workloads, which are requrests where the network transfer time makes up the majority of the overall response time, remain slow</li>
                 </ul>
             </div>
-            <div class="section">
-                <!-- todo image here -->
+            <div class="intro-image">
+                <IntroImage></IntroImage>
             </div>
         </div>
         <div class="right">
@@ -53,6 +57,9 @@ import Poster from "$components/tuw/Poster.svelte";
         <div class="left">
             <h2 class="heading">Load Balancer Implementation</h2>
             <div class="white-card">
+                <div class="lb-image">
+                    <LBImage></LBImage>
+                </div>
                 <ul>
                     <li>Mean response time acts as a proxy metric for performance and network proximity</li>
                     <li>Load balancing decisions are continually updated and optimized</li>
@@ -63,6 +70,9 @@ import Poster from "$components/tuw/Poster.svelte";
             <h2 class="heading">Load Balancer Scaling & Scheduling</h2>
             <div class="white-card">
                 <ul>
+                    <div class="osmotic-image">
+                        <OsmoticImage></OsmoticImage>
+                    </div>
                     <li>Inspired by osmotic pressure</li>
                     <li>Closeness to clients, serverless function replicas, and request rates contribute to pressure</li>
                     <li>If a threshold is exceeded, a load balancer gets placed</li>
@@ -74,8 +84,16 @@ import Poster from "$components/tuw/Poster.svelte";
         <div class="left">
             <div class="section">
                 <h2 class="heading">Results</h2>
+                <div class="result-image">
+                    <Result></Result>
+
+                </div>
+
                 <ul>
-                    <li></li>
+                    <li>Our approach shows at least a 30%-69% reduction in mean response time</li>
+                    <li>Both function execution time and network transfer time are reduced</li>
+                    <li>It successfully adapts to the dynamic conditions found in edge computing</li>
+                    <li>There is no single optimal set of configurations for all scenarios</li>
                 </ul>
             </div>
         </div>
@@ -101,6 +119,21 @@ import Poster from "$components/tuw/Poster.svelte";
 </Poster>
 
 <style lang="scss">
+
+    .osmotic-image {
+        height: dpiAdjust(140mm);
+        margin-bottom: dpiAdjust(10mm);
+    }
+
+    .lb-image {
+        height: dpiAdjust(160mm);
+        margin-bottom: dpiAdjust(10mm);
+    }
+
+    .intro-image {
+        height: dpiAdjust(130mm);
+        margin-bottom: dpiAdjust(10mm);
+    }
 
     .card-row {
         display: grid;
@@ -128,6 +161,11 @@ import Poster from "$components/tuw/Poster.svelte";
         }
     }
 
+    .result-image {
+        height: dpiAdjust(150mm);
+        margin-bottom: dpiAdjust(10mm);
+    }
+
     .fat-title {
         font-weight: 700;
         font-size: dpiAdjust(72pt);
@@ -135,7 +173,19 @@ import Poster from "$components/tuw/Poster.svelte";
         color: #7591b7;
     }
 
+    .row--middle {
+        .left, .right {
+            flex-direction: column;
+            display: flex;
+        }
+
+        .white-card {
+            flex-grow: 1;
+        }
+    }
+
     .white-card {
+        // height: 100%;
         padding: dpiAdjust(10mm);
         border-radius: dpiAdjust(10mm);
         background-color: white;
@@ -145,19 +195,20 @@ import Poster from "$components/tuw/Poster.svelte";
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: dpiAdjust(30mm);
-
+        align-items: stretch;
+        justify-items: stretch;
 
         &--middle {
             padding: dpiAdjust(10mm);
             border-radius: dpiAdjust(10mm);
             border-top-left-radius: 0;
             background-color: var(--c-tuw-header-background);
-            margin-bottom: dpiAdjust(30mm);
+            margin-bottom: dpiAdjust(20mm);
         }
     }
 
     .section {
-        margin-bottom: dpiAdjust(30mm);
+        margin-bottom: dpiAdjust(20mm);
     }
 
     .heading {
